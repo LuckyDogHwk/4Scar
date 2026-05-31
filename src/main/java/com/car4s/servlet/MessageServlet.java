@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
  */
 @WebServlet("/message")
 public class MessageServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(MessageServlet.class);
     private final MessageService messageService = new MessageService();
 
     @Override

@@ -1,64 +1,28 @@
 package com.car4s.util;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 /**
- * 分页工具类
- * 用于封装分页查询结果
- * @param <T> 分页数据的类型
+ * 分页结果封装类
+ * @param <T> 数据类型
  */
+@Data
+@NoArgsConstructor
 public class PageBean<T> {
-    private int currentPage = 1;
-    private int pageSize = 10;
-    private int totalCount;
-    private int totalPage;
-    private List<T> list;
+    private int currentPage;    // 当前页码
+    private int pageSize;       // 每页条数
+    private int totalCount;     // 总记录数
+    private int totalPages;     // 总页数
+    private List<T> data;        // 当前页数据
 
-    public PageBean() {}
-
-    public PageBean(int currentPage, int pageSize) {
+    public PageBean(int currentPage, int pageSize, int totalCount, List<T> data) {
         this.currentPage = currentPage;
         this.pageSize = pageSize;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
-        this.totalPage = (totalCount + pageSize - 1) / pageSize;
-    }
-
-    public int getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public List<T> getList() {
-        return list;
-    }
-
-    public void setList(List<T> list) {
-        this.list = list;
+        this.data = data;
+        this.totalPages = (totalCount + pageSize - 1) / pageSize;
     }
 }

@@ -8,6 +8,8 @@
           <element id="module-output" name="4Scar" />
         </element>
       </element>
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.9" />
+      <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.4.11" />
     </root>
   </artifact>
 </component>

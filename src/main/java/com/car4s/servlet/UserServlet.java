@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.List;
  */
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(UserServlet.class);
     private final UserService userService = new UserService();
 
     @Override

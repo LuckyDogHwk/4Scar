@@ -11,6 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +23,7 @@ import java.util.List;
  */
 @WebServlet("/review")
 public class ReviewServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(ReviewServlet.class);
     private final ReviewService reviewService = new ReviewService();
     private final ServiceOrderService orderService = new ServiceOrderService();
 

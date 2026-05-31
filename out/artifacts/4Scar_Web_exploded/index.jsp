@@ -17,8 +17,6 @@
     PartService partService = new PartService();
     ReviewService reviewService = new ReviewService();
     
-    System.out.println("DEBUG - User logged in: " + user.getUsername() + ", ID: " + user.getId());
-    
     if (user.isAdmin()) {
         request.setAttribute("userCount", userService.getAllUsers().size());
         request.setAttribute("carCount", carService.getCarCount());
@@ -41,10 +39,6 @@
         request.getRequestDispatcher("/mechanic/index.jsp").forward(request, response);
     } else {
         List<com.car4s.entity.Car> cars = carService.getCarsByOwnerId(user.getId());
-        System.out.println("DEBUG - Owner ID: " + user.getId() + ", Cars found: " + cars.size());
-        for (com.car4s.entity.Car c : cars) {
-            System.out.println("DEBUG - Car: " + c.getBrand() + " " + c.getModel() + ", plate: " + c.getPlateNumber());
-        }
         
         List<com.car4s.entity.ServiceOrder> orders = orderService.getOrdersByOwnerId(user.getId());
         List<com.car4s.entity.Message> messages = messageService.getMessagesByOwnerId(user.getId());

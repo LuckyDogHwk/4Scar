@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
  */
 @WebServlet("/complaint")
 public class ComplaintServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(ComplaintServlet.class);
     private final ComplaintService complaintService = new ComplaintService();
 
     @Override
@@ -117,10 +120,10 @@ public class ComplaintServlet extends HttpServlet {
         Long id = Long.parseLong(idStr);
         String handleResult = req.getParameter("handleResult");
         
-        System.out.println("处理投诉: id=" + id + ", handleResult=" + handleResult);
+        log.info("处理投诉: id={}, handleResult={}", id, handleResult);
         
         boolean success = complaintService.handleComplaint(id, handleResult);
-        System.out.println("处理结果: " + success);
+        log.info("处理结果: {}", success);
         
         resp.sendRedirect(req.getContextPath() + "/complaint?action=list");
     }

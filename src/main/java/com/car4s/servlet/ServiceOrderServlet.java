@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -26,6 +28,7 @@ import java.util.List;
  */
 @WebServlet("/order")
 public class ServiceOrderServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(ServiceOrderServlet.class);
     private final ServiceOrderService orderService = new ServiceOrderService();
     private final CarService carService = new CarService();
     private final UserService userService = new UserService();

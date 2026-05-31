@@ -2,12 +2,15 @@ package com.car4s.servlet;
 
 import com.car4s.entity.User;
 import com.car4s.service.UserService;
+import com.car4s.util.MD5Util;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,6 +21,7 @@ import java.io.PrintWriter;
  */
 @WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
+    private static final Logger log = LoggerFactory.getLogger(AuthServlet.class);
     private final UserService userService = new UserService();
 
     @Override
@@ -25,9 +29,9 @@ public class AuthServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         String action = req.getParameter("action");
-        
-        System.out.println("AuthServlet doPost called, action: " + action);
-        
+
+        log.info("AuthServlet doPost called, action: {}", action);
+
         try {
             if ("login".equals(action)) {
                 login(req, resp);
@@ -39,7 +43,7 @@ public class AuthServlet extends HttpServlet {
                 updateProfile(req, resp);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("操作失败", e);
             showError(resp, "操作失败: " + e.getMessage());
         }
     }
@@ -59,17 +63,17 @@ public class AuthServlet extends HttpServlet {
     private void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        
-        System.out.println("Login attempt: " + username);
-        
+
+        log.info("Login attempt: {}", username);
+
         User user = userService.login(username, password);
         if (user != null) {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            System.out.println("Login success, redirecting to index.jsp");
+            log.info("Login success, redirecting to index.jsp");
             resp.sendRedirect(req.getContextPath() + "/index.jsp");
         } else {
-            System.out.println("Login failed");
+            log.info("Login failed: user not found");
             req.setAttribute("error", "用户名或密码错误");
             req.getRequestDispatcher("/login.jsp").forward(req, resp);
         }
@@ -81,24 +85,24 @@ public class AuthServlet extends HttpServlet {
         String realName = req.getParameter("realName");
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
-        
-        System.out.println("Register attempt: " + username);
-        
+
+        log.info("Register attempt: {}", username);
+
         User user = new User();
         user.setUsername(username);
-        user.setPassword(password);
+        user.setPassword(MD5Util.encrypt(password));
         user.setRealName((realName != null && !realName.trim().isEmpty()) ? realName : username);
         user.setPhone(phone);
         user.setEmail(email);
-        
+
         boolean success = userService.register(user);
-        System.out.println("Register result: " + success);
-        
+        log.info("Register result: {}", success);
+
         if (success) {
-            System.out.println("Register success, redirecting to login.jsp");
+            log.info("Register success, redirecting to login.jsp");
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
         } else {
-            System.out.println("Register failed: username exists");
+            log.info("Register failed: username exists");
             req.setAttribute("error", "用户名已存在");
             req.getRequestDispatcher("/register.jsp").forward(req, resp);
         }
@@ -123,7 +127,7 @@ public class AuthServlet extends HttpServlet {
         User latestUser = userService.getUserById(user.getId());
         req.setAttribute("user", latestUser);
         session.setAttribute("user", latestUser);
-        
+
         String targetPage;
         if (latestUser.isAdmin()) {
             targetPage = "/admin/profile.jsp";
@@ -142,22 +146,22 @@ public class AuthServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
             return;
         }
-        
+
         String newUsername = req.getParameter("username");
         String newPassword = req.getParameter("newPassword");
         String realName = req.getParameter("realName");
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
-        
+
         // 更新基本信息
         user.setRealName(realName);
         user.setPhone(phone);
         user.setEmail(email);
-        
+
         boolean success = userService.updateUser(user);
-        
+
         // 更新用户名（如果改变且未被使用）
-        if (newUsername != null && !newUsername.trim().isEmpty() 
+        if (newUsername != null && !newUsername.trim().isEmpty()
                 && !newUsername.equals(user.getUsername())) {
             if (userService.updateUsername(user.getId(), newUsername)) {
                 user.setUsername(newUsername);
@@ -168,12 +172,12 @@ public class AuthServlet extends HttpServlet {
                 return;
             }
         }
-        
+
         // 更新密码（如果填写了新密码）
         if (newPassword != null && !newPassword.trim().isEmpty()) {
-            userService.updatePassword(user.getId(), newPassword);
+            userService.updatePassword(user.getId(), MD5Util.encrypt(newPassword));
         }
-        
+
         if (success) {
             // 更新session中的用户信息
             User latestUser = userService.getUserById(user.getId());
@@ -185,7 +189,7 @@ public class AuthServlet extends HttpServlet {
             req.getRequestDispatcher(errorPage).forward(req, resp);
         }
     }
-    
+
     private String getProfilePage(User user) {
         if (user.isAdmin()) {
             return "/admin/profile.jsp";
@@ -195,7 +199,7 @@ public class AuthServlet extends HttpServlet {
             return "/owner/profile.jsp";
         }
     }
-    
+
     private void showError(HttpServletResponse resp, String message) throws IOException {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
