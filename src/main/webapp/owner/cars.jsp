@@ -228,10 +228,10 @@
                 <div class="car-grid">
                     <c:forEach var="car" items="${cars}">
                         <div class="car-card">
-                            <img src="${not empty car.imageUrl ? car.imageUrl : 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&q=80'}" 
+                            <img src="${not empty car.imageUrl ? car.imageUrl : ''}" 
                                  alt="${car.brand} ${car.model}" 
                                  class="car-image"
-                                 onerror="this.src='https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&q=80'">
+                                 onerror="this.src=''">
                             <div class="car-content">
                                 <div class="car-header">
                                     <div>
