@@ -127,25 +127,25 @@
                         <h4>📷 车辆示例（点击选择）</h4>
                         <div class="sample-images-grid">
                             <!-- 第一排：超跑系列 -->
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="兰博基尼">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="法拉利">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="迈凯伦">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷911">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="兰博基尼">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="法拉利">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="迈凯伦">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷911">
                             <!-- 第二排：德系豪华轿车 -->
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰S级">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宝马7系">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奥迪A6">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="劳斯莱斯">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰S级">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宝马7系">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奥迪A6">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="劳斯莱斯">
                             <!-- 第三排：豪华SUV -->
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰G级">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1566008885218-90abf9200ddb?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="路虎揽胜">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1605515298946-d062f2e9da53?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宾利添越">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷卡宴">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰G级">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="路虎揽胜">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宾利添越">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷卡宴">
                             <!-- 第四排：美系/日系/其他豪车 -->
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="凯迪拉克">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="雷克萨斯">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="沃尔沃">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1617531653520-4893f7bbf978?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="玛莎拉蒂">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="凯迪拉克">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="雷克萨斯">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="沃尔沃">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="玛莎拉蒂">
                         </div>
                     </div>
                 </div>
