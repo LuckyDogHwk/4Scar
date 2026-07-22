@@ -116,31 +116,31 @@ CREATE TABLE `complaint` (
 
 -- 插入管理员
 INSERT INTO `user`(`username`, `password`, `real_name`, `phone`, `email`, `role`, `status`) VALUES
-('admin', 'admin123', '系统管理员', '13800138000', 'admin@car4s.com', 'admin', 1);
+('admin', '0192023a7bbd73250516f069df18b500', '系统管理员', '13800138000', 'admin@car4s.com', 'admin', 1);
 
 -- 插入维修人员
 INSERT INTO `user`(`username`, `password`, `real_name`, `phone`, `email`, `role`, `status`) VALUES
-('mechanic1', '123456', '张师傅', '13900139001', 'zhang@car4s.com', 'mechanic', 1),
-('mechanic2', '123456', '李师傅', '13900139002', 'li@car4s.com', 'mechanic', 1),
-('mechanic3', '123456', '王师傅', '13900139003', 'wang@car4s.com', 'mechanic', 1);
+('mechanic1', 'e10adc3949ba59abbe56e057f20f883e', '张师傅', '13900139001', 'zhang@car4s.com', 'mechanic', 1),
+('mechanic2', 'e10adc3949ba59abbe56e057f20f883e', '李师傅', '13900139002', 'li@car4s.com', 'mechanic', 1),
+('mechanic3', 'e10adc3949ba59abbe56e057f20f883e', '王师傅', '13900139003', 'wang@car4s.com', 'mechanic', 1);
 
 -- 插入车主 (15位车主)
 INSERT INTO `user`(`username`, `password`, `real_name`, `phone`, `email`, `role`, `status`) VALUES
-('owner1', '123456', '张三', '13800138001', 'zhangsan@email.com', 'owner', 1),
-('owner2', '123456', '李四', '13800138002', 'lisi@email.com', 'owner', 1),
-('owner3', '123456', '王五', '13800138003', 'wangwu@email.com', 'owner', 1),
-('owner4', '123456', '赵六', '13800138004', 'zhaoliu@email.com', 'owner', 1),
-('owner5', '123456', '钱七', '13800138005', 'qianqi@email.com', 'owner', 1),
-('owner6', '123456', '孙八', '13800138006', 'sunba@email.com', 'owner', 1),
-('owner7', '123456', '周九', '13800138007', 'zhoujiu@email.com', 'owner', 1),
-('owner8', '123456', '吴十', '13800138008', 'wushi@email.com', 'owner', 1),
-('owner9', '123456', '郑明', '13800138009', 'zhengming@email.com', 'owner', 1),
-('owner10', '123456', '刘洋', '13800138010', 'liuyang@email.com', 'owner', 1),
-('owner11', '123456', '陈华', '13800138011', 'chenhua@email.com', 'owner', 1),
-('owner12', '123456', '林峰', '13800138012', 'linfeng@email.com', 'owner', 1),
-('owner13', '123456', '黄磊', '13800138013', 'huanglei@email.com', 'owner', 1),
-('owner14', '123456', '徐强', '13800138014', 'xuqiang@email.com', 'owner', 1),
-('owner15', '123456', '马超', '13800138015', 'machao@email.com', 'owner', 1);
+('owner1', 'e10adc3949ba59abbe56e057f20f883e', '张三', '13800138001', 'zhangsan@email.com', 'owner', 1),
+('owner2', 'e10adc3949ba59abbe56e057f20f883e', '李四', '13800138002', 'lisi@email.com', 'owner', 1),
+('owner3', 'e10adc3949ba59abbe56e057f20f883e', '王五', '13800138003', 'wangwu@email.com', 'owner', 1),
+('owner4', 'e10adc3949ba59abbe56e057f20f883e', '赵六', '13800138004', 'zhaoliu@email.com', 'owner', 1),
+('owner5', 'e10adc3949ba59abbe56e057f20f883e', '钱七', '13800138005', 'qianqi@email.com', 'owner', 1),
+('owner6', 'e10adc3949ba59abbe56e057f20f883e', '孙八', '13800138006', 'sunba@email.com', 'owner', 1),
+('owner7', 'e10adc3949ba59abbe56e057f20f883e', '周九', '13800138007', 'zhoujiu@email.com', 'owner', 1),
+('owner8', 'e10adc3949ba59abbe56e057f20f883e', '吴十', '13800138008', 'wushi@email.com', 'owner', 1),
+('owner9', 'e10adc3949ba59abbe56e057f20f883e', '郑明', '13800138009', 'zhengming@email.com', 'owner', 1),
+('owner10', 'e10adc3949ba59abbe56e057f20f883e', '刘洋', '13800138010', 'liuyang@email.com', 'owner', 1),
+('owner11', 'e10adc3949ba59abbe56e057f20f883e', '陈华', '13800138011', 'chenhua@email.com', 'owner', 1),
+('owner12', 'e10adc3949ba59abbe56e057f20f883e', '林峰', '13800138012', 'linfeng@email.com', 'owner', 1),
+('owner13', 'e10adc3949ba59abbe56e057f20f883e', '黄磊', '13800138013', 'huanglei@email.com', 'owner', 1),
+('owner14', 'e10adc3949ba59abbe56e057f20f883e', '徐强', '13800138014', 'xuqiang@email.com', 'owner', 1),
+('owner15', 'e10adc3949ba59abbe56e057f20f883e', '马超', '13800138015', 'machao@email.com', 'owner', 1);
 
 -- 插入车辆数据 (每个车主至少一辆车)
 INSERT INTO `car`(`owner_id`, `plate_number`, `brand`, `model`, `purchase_date`, `vin`, `maintenance_cycle`, `last_maintenance_date`, `image_url`) VALUES
