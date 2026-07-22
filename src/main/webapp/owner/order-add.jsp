@@ -121,7 +121,7 @@
             var option = select.options[select.selectedIndex];
             var preview = document.getElementById('carPreview');
             if (select.value) {
-                document.getElementById('carPreviewImg').src = option.dataset.image || 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=200&q=80';
+                document.getElementById('carPreviewImg').src = option.dataset.image || '';
                 document.getElementById('carPreviewBrand').textContent = option.dataset.brand;
                 document.getElementById('carPreviewPlate').textContent = option.dataset.plate;
                 preview.style.display = 'flex';
