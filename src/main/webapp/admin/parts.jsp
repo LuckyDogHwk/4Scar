@@ -263,10 +263,10 @@
                 <div class="parts-grid">
                     <c:forEach var="part" items="${parts}">
                         <div class="part-card">
-                            <img src="${not empty part.imageUrl ? part.imageUrl : 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80'}" 
+                            <img src="${not empty part.imageUrl ? part.imageUrl : ''}" 
                                  alt="${part.partName}" 
                                  class="part-image"
-                                 onerror="this.src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80'">
+                                 onerror="this.src=''">
                             <div class="part-content">
                                 <div class="part-header">
                                     <div>
