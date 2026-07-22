@@ -338,10 +338,10 @@
                 <div class="my-cars">
                     <c:forEach var="car" items="${myCars}">
                         <div class="car-mini-card">
-                            <img src="${not empty car.imageUrl ? car.imageUrl : 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=200&q=80'}" 
+                            <img src="${not empty car.imageUrl ? car.imageUrl : ''}" 
                                  alt="${car.brand}" 
                                  class="car-mini-img"
-                                 onerror="this.src='https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=200&q=80'">
+                                 onerror="this.src=''">
                             <div class="car-mini-info">
                                 <div class="car-mini-brand">${car.brand}</div>
                                 <div class="car-mini-model">${car.model}</div>
