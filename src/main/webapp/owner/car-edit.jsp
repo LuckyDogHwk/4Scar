@@ -123,14 +123,14 @@
                     <div class="sample-images">
                         <h4>📷 示例图片（点击选择）</h4>
                         <div class="sample-images-grid">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宝马">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奥迪">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="特斯拉">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="雷克萨斯">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="沃尔沃">
-                            <img class="sample-image" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=200&q=80" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="凯迪拉克">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奔驰">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="宝马">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="奥迪">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="保时捷">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="特斯拉">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="雷克萨斯">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="沃尔沃">
+                            <img class="sample-image" src="" onclick="selectImage(this.src.replace('w=200', 'w=400'))" title="凯迪拉克">
                         </div>
                     </div>
                 </div>
